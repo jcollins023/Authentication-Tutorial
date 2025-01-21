@@ -15,7 +15,9 @@ struct Authentication_TutorialApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                RootView()
+            }
         }
     }
 }
