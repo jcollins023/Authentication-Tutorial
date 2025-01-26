@@ -53,14 +53,6 @@ struct SignInEmailView: View {
             Button {
                 Task{
                     do {
-                        try await viewModel.signUp()
-                        showSignInView = false
-                        return
-                    } catch {
-                        print(error)
-                    }
-                    
-                    do {
                         try await viewModel.signIn()
                         showSignInView = false
                         return
@@ -77,9 +69,29 @@ struct SignInEmailView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
-            
-            Spacer()
+            .padding()
         }
+            
+            Button {
+                Task {
+                    do {
+                        try await viewModel.signUp()
+                        showSignInView = false
+                        return
+                    } catch {
+                        print(error)
+                    }
+                }
+            } label: {
+                Text("Sign Up")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+        }
+        
         .padding()
         .navigationTitle("Sign In With Email")
     }
