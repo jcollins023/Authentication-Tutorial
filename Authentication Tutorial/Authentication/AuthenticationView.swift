@@ -10,6 +10,7 @@ import SwiftUI
 struct AuthenticationView: View {
     
     @Binding var showSignInView: Bool
+    @Binding var showSignUpView: Bool
 
     var body: some View {
         VStack {
@@ -24,16 +25,29 @@ struct AuthenticationView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
-        Spacer()
+            
+            NavigationLink {
+                SignUpEmailView(showSignUpView: $showSignUpView)
+            } label: {
+                Text ("Sign Up With Email")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+            }
+            
+            Spacer()
         }
         .padding()
-        .navigationTitle("Sign In")
+        .navigationTitle("Welcome")
     }
 }
 
 #Preview {
     NavigationStack {
-        AuthenticationView(showSignInView: .constant(false))
+        AuthenticationView(showSignInView: .constant(false), showSignUpView: .constant(false))
     }
 }
 

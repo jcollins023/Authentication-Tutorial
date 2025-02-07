@@ -21,6 +21,7 @@ struct SettingsView: View {
    
     @StateObject private var viewModel = SettingsViewModel()
     @Binding var showSignInView: Bool
+    @State private var showMenu = false
     
     var body: some View {
         List {
@@ -36,6 +37,16 @@ struct SettingsView: View {
             }
         }
         .navigationTitle("Settings")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    showMenu.toggle()
+                }, label:{
+                    Image(systemName: "line.3.horizontal")
+                })
+            }
+        }
     }
 }
 
