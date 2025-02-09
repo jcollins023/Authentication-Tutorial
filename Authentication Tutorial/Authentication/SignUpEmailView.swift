@@ -12,8 +12,6 @@ final class SignUpEmailViewModel: ObservableObject {
     
     @Published var email = ""
     @Published var password = ""
-    @Published var firstName = ""
-    @Published var lastName = ""
     
     func signUp() async throws {
         guard !email.isEmpty, !password.isEmpty else {
@@ -31,7 +29,7 @@ struct SignUpEmailView: View {
     @StateObject private var viewModel = SignUpEmailViewModel()
     @Binding var showSignUpView: Bool
     
-    var body: some View{
+    var body: some View {
         VStack {
             TextField("Email...", text: $viewModel.email)
                 .padding()
@@ -39,16 +37,6 @@ struct SignUpEmailView: View {
                 .cornerRadius(10)
             
             SecureField("Password...", text: $viewModel.password)
-                .padding()
-                .background(Color.gray.opacity(0.4))
-                .cornerRadius(10)
-            
-            TextField("First Name...", text: $viewModel.firstName)
-                .padding()
-                .background(Color.gray.opacity(0.4))
-                .cornerRadius(10)
-            
-            TextField("Last Name...", text: $viewModel.lastName)
                 .padding()
                 .background(Color.gray.opacity(0.4))
                 .cornerRadius(10)

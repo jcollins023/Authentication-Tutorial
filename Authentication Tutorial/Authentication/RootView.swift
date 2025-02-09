@@ -17,26 +17,34 @@ struct RootView: View {
     var body: some View {
         ZStack {
             NavigationStack {
-                SettingsView(showSignInView: $showSignInView)
+                SettingsView(showSignInView: $showSignInView, showSignUpView: $showSignUpView)
+            }
+            
+        }
+        .onAppear() {
+            if Auth.auth().currentUser == nil {
+                showSignUpView.toggle()
             }
         }
-            .onAppear {
-                if Auth.auth().currentUser?.uid != nil {
-                    //user is logged in
-
-                    }else {
-                         //user is not logged in
-                        }
-                //let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
-                //self.showSignInView = authUser == nil
-        }
-        .fullScreenCover(isPresented: $showSignInView) {
+        .fullScreenCover(isPresented: $showSignUpView) {
             NavigationStack {
                 AuthenticationView(showSignInView: $showSignInView, showSignUpView: $showSignUpView)
             }
         }
+       
+        .onAppear {
+            if Auth.auth().currentUser == nil {
+                showSignInView.toggle()
+            }
+        }
+        .fullScreenCover(isPresented: $showSignInView) {
+            NavigationStack {
+                AuthenticationView(showSignInView: $showSignInView, showSignUpView: $showSignUpView)
+                }
+            }
+        }
     }
-}
+
     
     #Preview {
         RootView()

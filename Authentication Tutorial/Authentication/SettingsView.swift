@@ -21,6 +21,7 @@ struct SettingsView: View {
    
     @StateObject private var viewModel = SettingsViewModel()
     @Binding var showSignInView: Bool
+    @Binding var showSignUpView: Bool
     @State private var showMenu = false
     
     var body: some View {
@@ -30,6 +31,8 @@ struct SettingsView: View {
                     do {
                         try viewModel.signOut()
                         showSignInView = true
+                        showSignUpView = true
+                        
                     } catch {
                         print(error)
                     }
@@ -52,6 +55,6 @@ struct SettingsView: View {
 
 #Preview {
     NavigationStack {
-        SettingsView(showSignInView: .constant(false))
+        SettingsView(showSignInView: .constant(false), showSignUpView: .constant(false))
     }
 }
