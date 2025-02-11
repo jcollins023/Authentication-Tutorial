@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1505B6D82D3AC3AB001F1EB9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1505B6D72D3AC3AB001F1EB9 /* FirebaseAuth */; };
 		1505B6DA2D3AC3AB001F1EB9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1505B6D92D3AC3AB001F1EB9 /* FirebaseFirestore */; };
-		1505B7FD2D5BB94A001F1EB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1505B7F02D5BB94A001F1EB9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +32,6 @@
 		1505B6A92D3AC348001F1EB9 /* Authentication Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Authentication Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1505B6B92D3AC348001F1EB9 /* Authentication TutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Authentication TutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1505B6C32D3AC348001F1EB9 /* Authentication TutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Authentication TutorialUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1505B7F02D5BB94A001F1EB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -88,7 +86,6 @@
 				1505B6BC2D3AC348001F1EB9 /* Authentication TutorialTests */,
 				1505B6C62D3AC348001F1EB9 /* Authentication TutorialUITests */,
 				1505B6AA2D3AC348001F1EB9 /* Products */,
-				1505B7F02D5BB94A001F1EB9 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,7 +224,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1505B7FD2D5BB94A001F1EB9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
